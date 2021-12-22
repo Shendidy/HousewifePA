@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Header } from '../components/home/Header'
+import Header from '../components/home/Header'
 
 const HomeScreen = () => {
     return (
