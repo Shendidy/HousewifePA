@@ -7,7 +7,7 @@ const Header = () => {
             <TouchableOpacity style={styles.logoButton}>
                 <Image 
                     style={styles.logo} 
-                    source={require('../../assets/images/name_logo_white_003bi.png')} 
+                    source={require('../../assets/images/name_logo_white_004i.png')} 
                 />
             </TouchableOpacity>
         </View>
