@@ -13,8 +13,8 @@ const Header = () => {
 
             <View style={styles.iconsContainer}>
                 <TouchableOpacity>
-                    <View style={styles.totalCartsBadge}>
-                        <Text style={styles.totalCartsBadgeText}>5</Text>
+                    <View style={styles.totalBadge}>
+                        <Text style={styles.totalBadgeText}>£0.00</Text>
                     </View>
                     <Image
                         source={require('../../assets/images/cart_plus_icon.png')}
@@ -31,7 +31,7 @@ const Header = () => {
 
                 <TouchableOpacity>
                     <Image
-                        source={require('../../assets/images/exit_icon.png')}
+                        source={require('../../assets/images/recipe_icon.png')}
                         style={styles.icon}
                     />
                 </TouchableOpacity>
@@ -41,21 +41,21 @@ const Header = () => {
 }
 
 const styles = StyleSheet.create({
-    totalCartsBadge: {
+    totalBadge: {
         backgroundColor: 'black',
         borderColor: 'red',
         borderWidth: 1,
         position: 'absolute',
         left: 25,
         bottom: 20,
-        width: 25,
+        width: 65,
         height: 18,
         borderRadius: 25,
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 100
     },
-    totalCartsBadgeText: {
+    totalBadgeText: {
         color: 'white',
         fontWeight: '600'
     },
