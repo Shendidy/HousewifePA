@@ -24,7 +24,7 @@ const Stores = () => {
             >
                 <View style={styles.smallContainer}>
                     <TextInput
-                        //style={styles.input}
+                        style={styles.input}
                         onChangeText={(val) => filterStores(val)}
                         //value={number}
                         placeholder="Search your stores..."
@@ -82,6 +82,12 @@ const styles = StyleSheet.create({
         padding: 15,
         backgroundColor: 'rgba(255,255,255,1)',
         alignItems: 'center'
+    },
+    input: {
+        width: '95%',
+        //height: 25,
+        //borderColor: 'black',
+        //borderWidth: 1
     }
 })
 
