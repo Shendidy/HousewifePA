@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { View, Text, ScrollView, StyleSheet, TextInput } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, TextInput, Image } from 'react-native'
 import { STORES } from '../../data/stores'
 
 const Stores = () => {
 
     const [stores, setStores] = useState(STORES);
+    var ad;
 
     function filterStores(str){
         if(str) setStores(STORES.filter(store => store.name.toLowerCase().includes(str.toLowerCase())))
@@ -32,7 +33,15 @@ const Stores = () => {
                 </View>
                 {stores.sort((a, b) => a.name > b.name ? 1 : -1).map((store, index) => (
                     <View style={styles.storeContainer} key={store.id}>
-                        <Text style={{color: 'black'}}>{store.name}</Text>
+                        <Image
+                            source={store.logo}
+                            style={styles.logo}
+                        />
+                        <View>
+                            <Text style={{color: 'black'}}>{store.name}</Text>
+                            <Text style={{color: 'black'}}></Text>
+                            <Text style={{color: 'black'}}>{store.name}</Text>
+                        </View>
                     </View>
                 ))}
             </ScrollView>
@@ -44,6 +53,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1
     },
+    logo: {
+        width: 100,
+        height: '100%',
+        marginRight: 5,
+        resizeMode: 'contain',
+        //backgroundColor: 'black'
+    },
     storeContainer: {
         margin: 10,
         height: 100,
@@ -51,7 +67,11 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: 'blue',
         padding: 15,
-        backgroundColor: 'rgba(255,255,255,1)'
+        paddingLeft: 5,
+        backgroundColor: 'rgba(255,255,255,1)',
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center'
     },
     smallContainer: {
         margin: 10,
