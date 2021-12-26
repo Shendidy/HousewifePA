@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { View, Text, ScrollView, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native'
 import { STORES } from '../../data/stores'
 import Card from '../shared/StoreCard'
+import AddStore from './AddStore'
 
-const Stores = () => {
+const Stores = ( { onScreenChange }) => {
 
     const [stores, setStores] = useState(STORES);
-    var ad;
 
     function filterStores(str){
         if(str) setStores(STORES.filter(store => store.name.toLowerCase().includes(str.toLowerCase())))
@@ -15,9 +15,15 @@ const Stores = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.smallContainer}>
-                <Text style={{color: 'black'}}>Add new store</Text>
-            </View>
+            <TouchableOpacity
+                onPress={useCallback(event => {
+                    onScreenChange(<AddStore />)
+                  }, [onScreenChange])}
+            >
+                <View style={styles.smallContainer}>
+                    <Text style={{color: 'black'}}>Add new store</Text>
+                </View>
+            </TouchableOpacity>
             <ScrollView
                 horizontal={false}
                 showsHorizontalScrollIndicator={false}

@@ -5,7 +5,7 @@ import Items from './Carts'
 import Stores from './Stores'
 import Recepies from './Recepies'
 
-const Header = ( { screen, onScreenChange } ) => {
+const Header = ( { onScreenChange } ) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.logoButton} >
@@ -32,7 +32,7 @@ const Header = ( { screen, onScreenChange } ) => {
 
                 <TouchableOpacity
                     onPress={useCallback(event => {
-                        onScreenChange(<Stores />)
+                        onScreenChange(<Stores onScreenChange={ onScreenChange }/>)
                       }, [onScreenChange])}
                 >
                     <Image
