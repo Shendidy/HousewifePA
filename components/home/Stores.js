@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { View, Text, ScrollView, StyleSheet, TextInput, Image } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native'
 import { STORES } from '../../data/stores'
+import Card from '../shared/Card'
 
 const Stores = () => {
 
@@ -23,26 +24,24 @@ const Stores = () => {
                 showsVerticalScrollIndicator={false}
             >
                 <View style={styles.smallContainer}>
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={(val) => filterStores(val)}
-                        //value={number}
-                        placeholder="Search your stores..."
-                        //keyboardType="numeric"
-                    />
+                    <View style={styles.searchContainer}>
+                        <Image 
+                            style={styles.searchLogo} 
+                            source={require('../../assets/images/search_icon.png')} 
+                        />
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={(val) => filterStores(val)}
+                            //value={number}
+                            placeholder="Search your stores..."
+                            //keyboardType="numeric"
+                        />
+                    </View>
                 </View>
                 {stores.sort((a, b) => a.name > b.name ? 1 : -1).map((store, index) => (
-                    <View style={styles.storeContainer} key={store.id}>
-                        <Image
-                            source={store.logo}
-                            style={styles.logo}
-                        />
-                        <View>
-                            <Text style={{color: 'black'}}>{store.name}</Text>
-                            <Text style={{color: 'black'}}></Text>
-                            <Text style={{color: 'black'}}>{store.name}</Text>
-                        </View>
-                    </View>
+                    <TouchableOpacity>
+                        <Card store={store} key={store.id}/>
+                    </TouchableOpacity>
                 ))}
             </ScrollView>
         </View>
@@ -50,28 +49,17 @@ const Stores = () => {
 }
 
 const styles = StyleSheet.create({
+    searchContainer: {
+        flexDirection: "row",
+        alignItems: 'center'
+    },
     container: {
         flex: 1
     },
-    logo: {
-        width: 100,
-        height: '100%',
-        marginRight: 5,
-        resizeMode: 'contain',
-        //backgroundColor: 'black'
-    },
-    storeContainer: {
-        margin: 10,
-        height: 100,
-        borderRadius: 15,
-        borderWidth: 2,
-        borderColor: 'blue',
-        padding: 15,
-        paddingLeft: 5,
-        backgroundColor: 'rgba(255,255,255,1)',
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center'
+    searchLogo: {
+        width: 20,
+        height: 20,
+        marginRight: 5
     },
     smallContainer: {
         margin: 10,
@@ -85,9 +73,11 @@ const styles = StyleSheet.create({
     },
     input: {
         width: '95%',
-        //height: 25,
+        //marginLeft: 5,
+        height: 25,
         //borderColor: 'black',
-        //borderWidth: 1
+        //borderWidth: 1,
+        marginTop: -4,
     }
 })
 
