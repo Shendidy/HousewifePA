@@ -4,7 +4,7 @@ import { STORES } from '../../data/stores'
 import Card from '../shared/StoreCard'
 import AddStore from './AddStore'
 
-const Stores = ( { onScreenChange }) => {
+const Stores = ({ onScreenChange }) => {
 
     const [stores, setStores] = useState(STORES);
 
@@ -21,7 +21,7 @@ const Stores = ( { onScreenChange }) => {
                   }, [onScreenChange])}
             >
                 <View style={styles.smallContainer}>
-                    <Text style={{color: 'black'}}>Add new store</Text>
+                    <Text style={{color: 'black', fontSize: 20, height: 20}}>Add new store</Text>
                 </View>
             </TouchableOpacity>
             <ScrollView

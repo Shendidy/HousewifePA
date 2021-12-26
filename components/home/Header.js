@@ -5,7 +5,7 @@ import Items from './Carts'
 import Stores from './Stores'
 import Recepies from './Recepies'
 
-const Header = ( { onScreenChange } ) => {
+const Header = ({ onScreenChange }) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.logoButton} >
