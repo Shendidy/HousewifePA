@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 
-const Header = () => {
+import Items from './Carts'
+import Stores from './Stores'
+import Recepies from './Recepies'
+
+const Header = ( { screen, onScreenChange } ) => {
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.logoButton}>
+            <TouchableOpacity style={styles.logoButton} >
                 <Image 
                     style={styles.logo} 
                     source={require('../../assets/images/name_logo_white_004i.png')} 
@@ -12,7 +16,11 @@ const Header = () => {
             </TouchableOpacity>
 
             <View style={styles.iconsContainer}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={useCallback(event => {
+                        onScreenChange(<Items />)
+                      }, [onScreenChange])}
+                >
                     <View style={styles.totalBadge}>
                         <Text style={styles.totalBadgeText}>£0.00</Text>
                     </View>
@@ -22,14 +30,22 @@ const Header = () => {
                     />
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={useCallback(event => {
+                        onScreenChange(<Stores />)
+                      }, [onScreenChange])}
+                >
                     <Image
                         source={require('../../assets/images/store_icon.png')}
                         style={styles.icon}
                     />
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={useCallback(event => {
+                        onScreenChange(<Recepies />)
+                      }, [onScreenChange])}
+                >
                     <Image
                         source={require('../../assets/images/recipe_icon.png')}
                         style={styles.icon}

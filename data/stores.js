@@ -55,5 +55,11 @@ export  const STORES = [
         name: "Aldi",
         url: "https://www.aldi.com",
         logo: require("../assets/images/storeLogos/aldi.png")
+    },
+    {
+        id: 11,
+        name: "Amazon",
+        url: "https://www.amazon.co.uk",
+        logo: require("../assets/images/storeLogos/amazon.png")
     }
 ]

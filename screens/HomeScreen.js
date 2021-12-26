@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import Header from '../components/home/Header'
 import Stores from '../components/home/Stores'
+import Items from '../components/home/Carts'
+import Recepies from '../components/home/Recepies'
 
 const HomeScreen = () => {
+    const [screen, setScreen ] = useState(<Stores />);
+
     return (
         <View style={styles.container}>
-            <Header />
-            <Stores />
+            <Header screen={screen} onScreenChange={setScreen} />
+            {screen}
         </View>
     )
 }

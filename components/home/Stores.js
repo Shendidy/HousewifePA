@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, ScrollView, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native'
 import { STORES } from '../../data/stores'
-import Card from '../shared/Card'
+import Card from '../shared/StoreCard'
 
 const Stores = () => {
 
@@ -39,8 +39,8 @@ const Stores = () => {
                     </View>
                 </View>
                 {stores.sort((a, b) => a.name > b.name ? 1 : -1).map((store, index) => (
-                    <TouchableOpacity>
-                        <Card store={store} key={store.id}/>
+                    <TouchableOpacity key={store.id}>
+                        <Card store={store} />
                     </TouchableOpacity>
                 ))}
             </ScrollView>
