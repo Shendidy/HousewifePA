@@ -38,14 +38,12 @@ const Stores = ({ onScreenChange }) => {
                         <TextInput
                             style={styles.input}
                             onChangeText={(val) => filterStores(val)}
-                            //value={number}
                             placeholder="Search your stores..."
-                            //keyboardType="numeric"
                         />
                     </View>
                 </View>
                 {stores.sort((a, b) => a.name > b.name ? 1 : -1).map((store, index) => (
-                    <TouchableOpacity key={store.id}>
+                    <TouchableOpacity key={store.name}>
                         <Card store={store} />
                     </TouchableOpacity>
                 ))}
