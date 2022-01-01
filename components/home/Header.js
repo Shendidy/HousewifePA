@@ -4,11 +4,17 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import Items from './Carts'
 import Stores from './Stores'
 import Recepies from './Recepies'
+import Home from './Home'
 
 const Header = ({ onScreenChange }) => {
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.logoButton} >
+            <TouchableOpacity
+                style={styles.logoButton}
+                onPress={useCallback(event => {
+                    onScreenChange(<Home />)
+                    }, [onScreenChange])}
+            >
                 <Image 
                     style={styles.logo} 
                     source={require('../../assets/images/name_logo_white_004i.png')} 
@@ -32,7 +38,7 @@ const Header = ({ onScreenChange }) => {
 
                 <TouchableOpacity
                     onPress={useCallback(event => {
-                        onScreenChange(<Stores onScreenChange={ onScreenChange }/>)
+                        onScreenChange(<Stores onScreenChange={ onScreenChange } />)
                       }, [onScreenChange])}
                 >
                     <Image

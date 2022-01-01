@@ -17,7 +17,7 @@ const Stores = ({ onScreenChange }) => {
         <View style={styles.container}>
             <TouchableOpacity
                 onPress={useCallback(event => {
-                    onScreenChange(<AddStore />)
+                    onScreenChange(<AddStore onScreenChange = {onScreenChange} />)
                   }, [onScreenChange])}
             >
                 <View style={styles.smallContainer}>

@@ -1,23 +1,33 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import Stores from './Stores'
 
-const AddStore = () => {
-    var name, url, logo;
-
+const AddStore = ({ onScreenChange }) => {
     return (
         <View style={styles.container}>
-            <View>
-                <Text style={{color: 'white', fontSize: 20}}>Store name:</Text>
+            <View style={styles.inputFields}>
+                <Text style={styles.inputFieldsTextRequired}>*Store name:</Text>
                 <TextInput
-                    style={styles.storeInput}
+                    style={styles.input}
+                />
+                <Text></Text>
+                <Text style={styles.inputFieldsText}>URL:</Text>
+                <TextInput
+                    style={styles.input}
                 />
             </View>
+
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity>
-                    <Text style={styles.buttons}>Cancel</Text>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={useCallback(event => {
+                        onScreenChange(<Stores onScreenChange={ onScreenChange } />)
+                      }, [onScreenChange])}
+                >
+                    <Text style={styles.buttonsText}>Cancel</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={styles.buttons}>Save</Text>
+                <TouchableOpacity style={styles.buttons}>
+                    <Text style={styles.buttonsText}>Save</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -26,12 +36,21 @@ const AddStore = () => {
 
 const styles = StyleSheet.create({
     buttonsContainer: {
-        justifyContent: 'space-between',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
         flexDirection: 'row',
+        marginTop: 50,
     },
     buttons: {
-        color: 'white',
+        width: 100,
+        alignItems: 'center',
+        backgroundColor: 'lightgrey',
+        borderWidth: 1,
+        borderColor: 'white',
+        borderRadius: 5
+    },
+    buttonsText: {
+        color: 'black',
         fontSize: 20,
     },
     searchContainer: {
@@ -39,7 +58,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     container: {
-        flex: 1
+        //flex: 1
     },
     searchLogo: {
         width: 20,
@@ -56,7 +75,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255,255,255,1)',
         alignItems: 'center'
     },
-    storeInput: {
+    input: {
         width: '95%',
         height: 35,
         fontSize: 20,
@@ -64,7 +83,16 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderWidth: 1,
         marginTop: -4,
-    }
+    },
+    inputFieldsText: {
+        color: 'white',
+        fontSize: 20
+    },
+    inputFieldsTextRequired: {
+        fontWeight: 'bold',
+        color: 'white',
+        fontSize: 20,
+    },
 })
 
 export default AddStore
