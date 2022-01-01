@@ -7,12 +7,14 @@ import Recepies from './Recepies'
 import Home from './Home'
 
 const Header = ({ onScreenChange }) => {
+    const activeIconBackground = 'red';
+    const inactiveIconBackground = 'black';
     const [bgColors, setBgColors] = useState({
         backgrounds:{
-            homeBackground: 'red',
-            cartsBackground: 'black',
-            storesBackground: 'black',
-            recepiesBackground: 'black'
+            homeBackground: activeIconBackground,
+            cartsBackground: inactiveIconBackground,
+            storesBackground: inactiveIconBackground,
+            recepiesBackground: inactiveIconBackground
         }
     });
 
@@ -20,10 +22,10 @@ const Header = ({ onScreenChange }) => {
         setBgColors({
             backgrounds:
             {
-                homeBackground: 'black',
-                cartsBackground: 'black',
-                storesBackground: 'black',
-                recepiesBackground: 'black'
+                homeBackground: inactiveIconBackground,
+                cartsBackground: inactiveIconBackground,
+                storesBackground: inactiveIconBackground,
+                recepiesBackground: inactiveIconBackground
             }
         });
     }
@@ -31,10 +33,23 @@ const Header = ({ onScreenChange }) => {
     function setScreen(screenToShow, screenBackground){
         resetBackgrounds();
 
-        if(screenBackground === 'home') setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, homeBackground: 'red'}}));
-        if(screenBackground === 'carts') setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, cartsBackground: 'red'}}));
-        if(screenBackground === 'stores') setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, storesBackground: 'red'}}));
-        if(screenBackground === 'recepies') setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, recepiesBackground: 'red'}}));
+        switch(screenBackground){
+            case 'home':
+                setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, homeBackground: activeIconBackground}}));
+                break;
+            case 'carts':
+                setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, cartsBackground: activeIconBackground}}));
+                break;
+            case 'stores':
+                setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, storesBackground: activeIconBackground}}));
+                break;
+            case 'recepies':
+                setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, recepiesBackground: activeIconBackground}}));
+                break;
+            default:
+                resetBackgrounds();
+        }
+
         onScreenChange(screenToShow);
     }
 
@@ -99,8 +114,8 @@ const styles = StyleSheet.create({
         borderColor: 'red',
         borderWidth: 1,
         position: 'absolute',
-        left: 25,
-        bottom: 20,
+        left: 15,
+        bottom: 25,
         width: 65,
         height: 18,
         borderRadius: 25,
@@ -119,13 +134,14 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     iconsContainer: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginTop: 20,
     },
     container: {
         justifyContent: 'space-between',
         alignItems: 'center',
         flexDirection: 'row',
-        marginHorizontal: 10
+        marginHorizontal: 10,
     },
     logo: {
         width: '100%',
