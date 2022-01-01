@@ -36,7 +36,7 @@ export const ITEMS = [
                 store = 'Amazon',
                 data = [
                     {
-                        date = 1636987276000,// get date using Date.now()
+                        date = 1636987276000,// get date using Date.now(), which gives epoch UTC now
                         price = '£1.49',
                         link = 'https://www.amazon.co.uk/iGPSPORT-Cadence-Sensor-Module-Bluetooth/dp/B06XC1NNTD/ref=sr_1_3?keywords=igpsport+c61&qid=1640530058&sprefix=igpsport%2Caps%2C57&sr=8-3'
                     }
