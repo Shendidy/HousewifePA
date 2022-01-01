@@ -7,7 +7,7 @@ import Recepies from './Recepies'
 import Home from './Home'
 
 const Header = ({ onScreenChange }) => {
-    const activeIconBackground = 'red';
+    const activeIconBackground = 'blue';
     const inactiveIconBackground = 'black';
     const [bgColors, setBgColors] = useState({
         backgrounds:{
