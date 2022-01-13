@@ -1,13 +1,13 @@
 import React, { useCallback } from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
-import Stores from './Stores'
+import StoreItems from './StoreItems'
 
-const AddStore = ({ onScreenChange }) => {
+const AddItem = ({ store, onScreenChange }) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Add New Store...</Text>
+        <Text style={styles.header}>Add New Item to {store.name}</Text>
             <View style={styles.inputFields}>
-                <Text style={styles.inputFieldsTextRequired}>*Store name:</Text>
+                <Text style={styles.inputFieldsTextRequired}>*Item name:</Text>
                 <TextInput
                     style={styles.input}
                 />
@@ -22,7 +22,7 @@ const AddStore = ({ onScreenChange }) => {
                 <TouchableOpacity
                     style={styles.buttons}
                     onPress={useCallback(event => {
-                        onScreenChange(<Stores onScreenChange={ onScreenChange } />)
+                        onScreenChange(<StoreItems store={store} onScreenChange={ onScreenChange } />)
                       }, [onScreenChange])}
                 >
                     <Text style={styles.buttonsText}>Cancel</Text>
@@ -104,4 +104,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default AddStore
+export default AddItem

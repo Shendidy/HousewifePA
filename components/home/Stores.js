@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { View, Text, ScrollView, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native'
 import { STORES } from '../../data/stores'
-import Card from '../shared/StoreCard'
+import StoreCard from '../shared/StoreCard'
 import AddStore from './AddStore'
 
 const Stores = ({ onScreenChange }) => {
@@ -42,10 +42,11 @@ const Stores = ({ onScreenChange }) => {
                         />
                     </View>
                 </View>
+
                 {stores.sort((a, b) => a.name > b.name ? 1 : -1).map((store, index) => (
-                    <TouchableOpacity key={store.name}>
-                        <Card store={store} />
-                    </TouchableOpacity>
+                    <View key={store.name} >
+                        <StoreCard store={store} onScreenChange = {onScreenChange} />
+                    </View>
                 ))}
             </ScrollView>
         </View>
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
         //borderColor: 'black',
         //borderWidth: 1,
         marginTop: -4,
-    }
+    },
 })
 
 export default Stores

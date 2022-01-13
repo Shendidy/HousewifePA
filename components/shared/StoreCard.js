@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { View, Text, StyleSheet, Image, Linking, TouchableOpacity } from 'react-native'
+import StoreItems from '../home/StoreItems';
 
-const Card = ({ store }) => {
+const StoreCard = ({ store, onScreenChange }) => {
     var infoLink = <Text></Text>;
     if(store.url)
     {
@@ -14,14 +15,21 @@ const Card = ({ store }) => {
     }
     return (
         <View style={styles.storeContainer} >
-            <Image
-                source={store.logo}
-                style={styles.logo}
-            />
-            <View style={styles.details}>
-                <Text style={styles.detailsText}>{store.name}</Text>
-                {infoLink}
-            </View>
+            <TouchableOpacity
+                style={styles.mainCard}
+                onPress={useCallback(event => {
+                    onScreenChange(<StoreItems store={store} onScreenChange = {onScreenChange} />)
+                  }, [onScreenChange])}
+            >
+                <Image
+                    source={store.logo}
+                    style={styles.logo}
+                />
+                <View style={styles.details}>
+                    <Text style={styles.detailsText}>{store.name}</Text>
+                    {infoLink}
+                </View>
+            </TouchableOpacity>
             <TouchableOpacity style={styles.delete}>
                 <Text style={styles.deleteText}>X</Text>
             </TouchableOpacity>
@@ -42,6 +50,12 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'flex-start',
+    },
+    mainCard: {
+        height: '100%',
+        flexDirection: 'row',
+        flex: 15,
+        padding: 2,
     },
     logo: {
         width: 100,
@@ -68,6 +82,9 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     infoLinkText: {
+        height: '100%',
+        width: '100%',
+        textAlign: 'center',
         color: 'blue',
     },
     delete: {
@@ -84,4 +101,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Card
+export default StoreCard

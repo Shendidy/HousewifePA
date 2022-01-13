@@ -54,7 +54,7 @@ const Header = ({ onScreenChange }) => {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, {paddingTop: 5}]}>
             <TouchableOpacity
                 style={styles.logoButton}
                 onPress={useCallback(event => {
@@ -62,7 +62,7 @@ const Header = ({ onScreenChange }) => {
                     }, [onScreenChange])}
             >
                 <Image 
-                    style={[styles.logo, {backgroundColor:bgColors.backgrounds.homeBackground}]} 
+                    style={[styles.logo, {borderWidth: 2, borderColor:bgColors.backgrounds.homeBackground}]} 
                     source={require('../../assets/images/name_logo_white_004i.png')} 
                 />
             </TouchableOpacity>
