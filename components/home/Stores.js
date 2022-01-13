@@ -21,7 +21,7 @@ const Stores = ({ onScreenChange }) => {
                   }, [onScreenChange])}
             >
                 <View style={styles.smallContainer}>
-                    <Text style={{color: 'black', fontSize: 20, height: 20}}>Add new store</Text>
+                    <Text style={{color: 'black', fontSize: 20, height: 30, marginTop: -5}}>Add New Store</Text>
                 </View>
             </TouchableOpacity>
             <ScrollView
@@ -78,10 +78,7 @@ const styles = StyleSheet.create({
     },
     input: {
         width: '95%',
-        //marginLeft: 5,
         height: 25,
-        //borderColor: 'black',
-        //borderWidth: 1,
         marginTop: -4,
     },
 })

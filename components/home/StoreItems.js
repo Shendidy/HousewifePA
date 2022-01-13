@@ -53,7 +53,7 @@ const StoreItems = ({ store=null, onScreenChange=null, fileterString=null }) => 
                 }, [onScreenChange])}
             >
                 <View style={styles.smallContainer}>
-                    <Text style={{color: 'black', fontSize: 20, height: 30, marginTop: -5}}>Add new item</Text>
+                    <Text style={{color: 'black', fontSize: 20, height: 30, marginTop: -5}}>Add New Item</Text>
                 </View>
             </TouchableOpacity>
 
