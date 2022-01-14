@@ -14,6 +14,20 @@ const ItemDetailsView = ({item, storeName, price, itemUrl, onScreenChange, setMo
             </Text>
     }
 
+    let otherPricesTag;
+    if(item.prices.length === 1) {
+        otherPricesTag = <Text style={[styles.modalDetailsLabel, {width: '100%', paddingTop: 5}]}>No Other Suppliers Available. </Text>
+    }
+    else if(item.prices.length > 1) {
+        otherPricesTag =
+            <>
+                <Text style={[styles.modalDetailsLabel, {width: '100%', paddingTop: 5}]}>All Available Prices: </Text>
+                    <Text style={styles.modalDetailsContainer}>
+                    <Text style={styles.modalDetailsText}><AllAvailablePrices prices={item.prices} storeName={storeName} onScreenChange={onScreenChange} setModalVisible={setModalVisible} /></Text>
+                </Text>
+            </>
+    }
+
     return (
         <View style={styles.centeredView}>
             <Image
@@ -37,10 +51,7 @@ const ItemDetailsView = ({item, storeName, price, itemUrl, onScreenChange, setMo
                 <Text style={styles.modalDetailsText}>£{price.toFixed(2)}</Text>
             </Text>
             {linkTag}
-            <Text style={[styles.modalDetailsLabel, {width: '100%', paddingTop: 5}]}>All Available Prices: </Text>
-            <Text style={styles.modalDetailsContainer}>
-                <Text style={styles.modalDetailsText}><AllAvailablePrices prices={item.prices} storeName={storeName} onScreenChange={onScreenChange} setModalVisible={setModalVisible} /></Text>
-            </Text>
+            {otherPricesTag}
         </View>
     )
 }
