@@ -29,7 +29,7 @@ const ItemDetailsView = ({item, storeName, price, itemUrl, onScreenChange, setMo
     }
 
     return (
-        <View style={styles.centeredView}>
+        <View style={[styles.centeredView, { marginBottom: 5 }]}>
             <Image
                 source={item.image}
                 style={styles.detailsImage}
