@@ -74,17 +74,13 @@ const styles = StyleSheet.create({
         flex: 2,
     },
     infoLink: {
-        height: 25,
+        height: 30,
+        width: 130,
         textDecorationLine: 'underline',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flex: 1,
     },
     infoLinkText: {
-        height: '100%',
-        width: '100%',
-        textAlign: 'center',
+        marginTop: 5,
+        textAlign: 'left',
         color: 'blue',
     },
     delete: {
