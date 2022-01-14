@@ -96,5 +96,25 @@ export const ITEMS = [
         ],
         image: require("../assets/images/itemImages/8715700118789.jpg"),
         tags: ['mayo', 'salad',]
+    },
+    {
+        barcode: 4088600104645,
+        brand: 'Inspired Cuisine',
+        name: 'BBQ Chicken Pizza',
+        description: 'Inspired Cuisine Stonebaked Thin & Crispy BBQ Chicken Pizza 325g.',
+        prices: [
+            {
+                store: 'Aldi',
+                data: [
+                    {
+                        date: 1642120833836,
+                        price: 1.85,
+                    }
+
+                ]
+            }
+        ],
+        image: require("../assets/images/itemImages/4088600104645.jpg"),
+        tags: ['ready meal', 'pizza',]
     }
 ]
