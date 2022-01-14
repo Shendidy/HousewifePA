@@ -117,15 +117,16 @@ const styles = StyleSheet.create({
         left: 15,
         bottom: 25,
         width: 65,
-        height: 18,
+        height: 20,
         borderRadius: 25,
         alignItems: 'center',
         justifyContent: 'center',
-        zIndex: 100
+        zIndex: 100,
     },
     totalBadgeText: {
         color: 'white',
-        fontWeight: '600'
+        fontWeight: '600',
+        marginTop: -3,
     },
     icon: {
         width: 24,
