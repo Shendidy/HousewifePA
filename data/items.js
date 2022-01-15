@@ -109,6 +109,7 @@ export const ITEMS = [
                     {
                         date: 1642120833836,
                         price: 1.85,
+                        link: 'https://groceries.aldi.co.uk/en-GB/p-inspired-cuisine-stonebaked-thin-crispy-bbq-chicken-pizza-325g/4088600104645'
                     }
 
                 ]
