@@ -1,12 +1,13 @@
-import * as React from "react";
-import { View, Text, SafeAreaView } from 'react-native'
-import HomeScreen from "./screens/HomeScreen";
+import React from "react";
+import { SafeAreaView, StatusBar, StatusBarStyle } from 'react-native'
 import SafeViewAndroid from "./components/shared/SafeViewAndroid";
+import SignedInStack from "./navigation";
 
 export default function App() {
   return(
-    <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
-      <HomeScreen />
+    <SafeAreaView style={[SafeViewAndroid.AndroidSafeArea, {backgroundColor: 'black'}]}>
+      <StatusBar barStyle="light-content" />
+      <SignedInStack />
     </SafeAreaView>
   );
 }

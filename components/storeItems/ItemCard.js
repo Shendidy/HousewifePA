@@ -1,21 +1,14 @@
-import React, { useState, useCallback } from 'react'
-import { View, Text, StyleSheet, Image, Linking, TouchableOpacity, ScrollView, Modal, Pressable, useWindowDimensions } from 'react-native'
-import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component'
-import StoreItems from '../home/StoreItems';
+import React, { useState } from 'react'
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Modal, Pressable } from 'react-native'
 import ItemDetailsView from './ItemDetailsView';
 
-const ItemCard = ({ storeName, item, onScreenChange }) => {
+const ItemCard = ({ navigation, storeName, item }) => {
     const[modalVisible, setModalVisible] = useState(false);
     
     var price, itemUrl;
 
     price = item.prices.filter(i => i.store === storeName)[0].data[0].price;
     itemUrl = item.prices.filter(i => i.store === storeName)[0].data[0].link;
-
-    console.log('\nItem prices:')
-    console.log(price);
-    console.log(itemUrl);
-    console.log('Store name: ' + storeName)
 
     return (
         <View style={styles.centeredView}>
@@ -34,7 +27,7 @@ const ItemCard = ({ storeName, item, onScreenChange }) => {
                             showsHorizontalScrollIndicator={false}
                             showsVerticalScrollIndicator={false}
                         >
-                            <ItemDetailsView item={item} storeName={storeName} price={price} itemUrl={itemUrl} onScreenChange={onScreenChange} setModalVisible={setModalVisible} />
+                            <ItemDetailsView navigation={navigation} item={item} storeName={storeName} price={price} itemUrl={itemUrl} setModalVisible={setModalVisible} />
                         </ScrollView>
                         <Pressable
                             style={[styles.button, styles.buttonClose]}

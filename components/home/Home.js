@@ -1,12 +1,10 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import Header from '../shared/Header'
 
-const Home = () => {
-    return (
+export default Home = ({ navigation, route }) => (
         <View>
-            <Text style={{color: 'white'}}>Wocome to your Housewife Personal Assistant!</Text>
+            <Header navigation={navigation} screenToShow={'HomeScreen'} />
+            <Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text>
         </View>
     )
-}
-
-export default Home

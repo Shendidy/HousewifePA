@@ -1,39 +1,44 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
-import StoreItems from './StoreItems'
 
-const AddItem = ({ store, onScreenChange }) => {
+export default AddItem = ({ navigation, route }) => {
+
+    let storeName;
+    if(route != null) storeName='TBC'
+    else storeName=route.params.store.name;
+    
     return (
         <View style={styles.container}>
-        <Text style={styles.header}>Add New Item to {store.name}</Text>
+            <Text style={styles.header}>Add New Item to {storeName}</Text>
+
             <View style={styles.inputFields}>
                 <Text style={styles.inputFieldsTextRequired}>*Item name:</Text>
+
                 <TextInput
                     style={styles.input}
                 />
+
                 <Text></Text>
+
                 <Text style={styles.inputFieldsText}>URL:</Text>
-                <TextInput
-                    style={styles.input}
-                />
+
+                <TextInput style={styles.input} />
             </View>
 
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity
                     style={styles.buttons}
-                    onPress={useCallback(event => {
-                        onScreenChange(<StoreItems store={store} onScreenChange={ onScreenChange } />)
-                      }, [onScreenChange])}
+                    onPress={() => navigation.goBack()}
                 >
                     <Text style={styles.buttonsText}>Cancel</Text>
                 </TouchableOpacity>
+
                 <TouchableOpacity style={styles.buttons}>
                     <Text style={styles.buttonsText}>Save</Text>
                 </TouchableOpacity>
             </View>
         </View>
-    )
-}
+    )}
 
 const styles = StyleSheet.create({
     buttonsContainer: {
@@ -103,5 +108,3 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
 })
-
-export default AddItem

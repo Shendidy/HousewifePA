@@ -1,12 +1,8 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 
-import Items from './Carts'
-import Stores from './Stores'
-import Recepies from './Recepies'
-import Home from './Home'
-
-const Header = ({ onScreenChange }) => {
+const Header = ({navigation, screenToShow='HomeScreen'}) => {
+    const [screenShown, setScreenShown] = useState(screenToShow);
     const activeIconBackground = 'blue';
     const inactiveIconBackground = 'black';
     const [bgColors, setBgColors] = useState({
@@ -30,36 +26,37 @@ const Header = ({ onScreenChange }) => {
         });
     }
     
-    function setScreen(screenToShow, screenBackground){
+    function setScreen(screen){
         resetBackgrounds();
 
-        switch(screenBackground){
-            case 'home':
+        switch(screen){
+            case 'HomeScreen':
                 setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, homeBackground: activeIconBackground}}));
                 break;
-            case 'carts':
+            case 'CartsScreen':
                 setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, cartsBackground: activeIconBackground}}));
                 break;
-            case 'stores':
+            case 'StoresScreen':
                 setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, storesBackground: activeIconBackground}}));
                 break;
-            case 'recepies':
+            case 'RecepiesScreen':
                 setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, recepiesBackground: activeIconBackground}}));
                 break;
             default:
                 resetBackgrounds();
         }
-
-        onScreenChange(screenToShow);
     }
+
+    useEffect(() => {
+        setScreenShown(screenToShow);
+        setScreen(screenShown);
+    },[]);
 
     return (
         <View style={[styles.container, {paddingTop: 5}]}>
             <TouchableOpacity
                 style={styles.logoButton}
-                onPress={useCallback(event => {
-                    setScreen(<Home />, 'home')
-                    }, [onScreenChange])}
+                onPress={() => navigation.push('HomeScreen')}
             >
                 <Image 
                     style={[styles.logo, {borderWidth: 2, borderColor:bgColors.backgrounds.homeBackground}]} 
@@ -69,9 +66,7 @@ const Header = ({ onScreenChange }) => {
 
             <View style={styles.iconsContainer}>
                 <TouchableOpacity
-                    onPress={useCallback(event => {
-                        setScreen(<Items />, 'carts')
-                      }, [onScreenChange])}
+                    onPress={() => navigation.push('CartsScreen')}
                 >
                     <View style={styles.totalBadge}>
                         <Text style={styles.totalBadgeText}>£0.00</Text>
@@ -83,9 +78,7 @@ const Header = ({ onScreenChange }) => {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={useCallback(event => {
-                        setScreen(<Stores onScreenChange={ onScreenChange } />, 'stores')
-                      }, [onScreenChange])}
+                    onPress={() => navigation.push('StoresScreen')}
                 >
                     <Image
                         style={[styles.icon, {backgroundColor:bgColors.backgrounds.storesBackground}]}
@@ -94,9 +87,7 @@ const Header = ({ onScreenChange }) => {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={useCallback(event => {
-                        setScreen(<Recepies />, 'recepies')
-                      }, [onScreenChange])}
+                    onPress={() => navigation.push('RecepiesScreen')}
                 >
                     <Image
                         style={[styles.icon, {backgroundColor:bgColors.backgrounds.recepiesBackground}]}

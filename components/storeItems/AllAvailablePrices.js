@@ -1,15 +1,12 @@
-import React, { useState, useCallback } from 'react'
-import { Text, View, StyleSheet, useWindowDimensions, Linking } from 'react-native'
-import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component'
-import StoreItems from '../home/StoreItems'
+import React from 'react'
+import { Text, View, StyleSheet, useWindowDimensions } from 'react-native'
+import { Table, Row, Rows } from 'react-native-table-component'
 import { STORES } from '../../data/stores'
 
 const AllAvailablePrices = (prices) => {
-    let onScreenChange = prices.onScreenChange;
     const tableHeader = ['Store','Price'];
-    const storeName = prices.storeName;
     let { height, width } = useWindowDimensions();
-    const otherPrices = GetOtherPricesRows(prices, storeName, onScreenChange, prices.setModalVisible);
+    const otherPrices = GetOtherPricesRows(prices);
     var widthArray = [150, 75];
     width = width * 0.9;
     if(width > 225) widthArray = [width*0.6, width*0.3];
@@ -24,11 +21,10 @@ const AllAvailablePrices = (prices) => {
     );
 };
 
-const GetOtherPricesRows = (prices, storeName, onScreenChange, setModalVisible) => {
+const GetOtherPricesRows = (prices) => {
     var storeToDisplay;
     var allPricesArray = [];
     var currentStoreName;
-    const itemName = prices.itemName;
 
     for (const [store, details] of Object.entries(prices)) {
         for (const [data, info] of Object.entries(details)) {
@@ -38,14 +34,16 @@ const GetOtherPricesRows = (prices, storeName, onScreenChange, setModalVisible) 
                 }
                 if(key === 'data') {
                     for( const [key1, value1] of Object.entries(value)) {
-                        if(storeName !== currentStoreName) {
+                        if(prices.storeName !== currentStoreName) {
                             const storeToSend = STORES.filter(store => store.name === currentStoreName)[0];
                             storeToDisplay = <Text 
                                                 style={[styles.tableText, {color: 'blue', textDecorationLine: 'underline'}]}
-                                                // onPress={useCallback(event => {
-                                                //     setModalVisible(false);
-                                                //     onScreenChange(<StoreItems store={storeToSend} onScreenChange={onScreenChange} filterString={itemName} />);
-                                                // }, [onScreenChange])}
+                                                onPress={() => {
+                                                    prices.setModalVisible(false);
+                                                    prices.navigation.push(
+                                                    'StoreItemsScreen', 
+                                                    {currentStore:storeToSend, filterString:prices.itemName});
+                                                }}
                                             >
                                                 {currentStoreName}
                                             </Text>;

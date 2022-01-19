@@ -1,8 +1,7 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { View, Text, StyleSheet, Image, Linking, TouchableOpacity } from 'react-native'
-import StoreItems from '../home/StoreItems';
 
-const StoreCard = ({ store, onScreenChange }) => {
+const StoreCard = ({ store, navigation }) => {
     var infoLink = <Text></Text>;
     if(store.url)
     {
@@ -17,9 +16,7 @@ const StoreCard = ({ store, onScreenChange }) => {
         <View style={styles.storeContainer} >
             <TouchableOpacity
                 style={styles.mainCard}
-                onPress={useCallback(event => {
-                    onScreenChange(<StoreItems store={store} onScreenChange = {onScreenChange} />)
-                  }, [onScreenChange])}
+                onPress={() => navigation.push('StoreItemsScreen', {currentStore:store})}
             >
                 <Image
                     source={store.logo}

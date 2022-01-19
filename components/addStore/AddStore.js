@@ -1,18 +1,21 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
-import Stores from './Stores'
 
-const AddStore = ({ onScreenChange }) => {
-    return (
+export default AddStore = ({ navigation, params }) => (
         <View style={styles.container}>
             <Text style={styles.header}>Add New Store...</Text>
+
             <View style={styles.inputFields}>
                 <Text style={styles.inputFieldsTextRequired}>*Store name:</Text>
+
                 <TextInput
                     style={styles.input}
                 />
+
                 <Text></Text>
+
                 <Text style={styles.inputFieldsText}>URL:</Text>
+
                 <TextInput
                     style={styles.input}
                 />
@@ -21,9 +24,7 @@ const AddStore = ({ onScreenChange }) => {
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity
                     style={styles.buttons}
-                    onPress={useCallback(event => {
-                        onScreenChange(<Stores onScreenChange={ onScreenChange } />)
-                      }, [onScreenChange])}
+                    onPress={() => navigation.goBack()}
                 >
                     <Text style={styles.buttonsText}>Cancel</Text>
                 </TouchableOpacity>
@@ -33,7 +34,6 @@ const AddStore = ({ onScreenChange }) => {
             </View>
         </View>
     )
-}
 
 const styles = StyleSheet.create({
     buttonsContainer: {
@@ -103,5 +103,3 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
 })
-
-export default AddStore

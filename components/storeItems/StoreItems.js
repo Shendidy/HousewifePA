@@ -1,26 +1,19 @@
 import React, { useState, useCallback } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, TextInput } from 'react-native'
 import { ITEMS } from '../../data/items'
-import AddItem from './AddItem';
-import Stores from './Stores';
-import ItemCard from '../shared/ItemCard';
+import ItemCard from './ItemCard';
 
-const StoreItems = ({ store=null, onScreenChange=null, fileterString=null }) => {
-    let originalItemsList = ITEMS;
+const StoreItems = ({ navigation, route }) => {
     let newItemsList;
     newItemsList = [];
 
-    // console.log('\noriginal Items List:')
-    // console.log(originalItemsList);
-    // console.log('Store name: ' + store.name)
-
-    originalItemsList.filter(item => item.prices.map(x => {
-        if(x.store === store.name) newItemsList.push(item)
+    ITEMS.filter(item => item.prices.map(storePrice => {
+        if(storePrice.store === route.params.currentStore.name) newItemsList.push(item)
       }));
 
     const [items, setItems] = useState(newItemsList);
 
-    function filterItems(str = fileterString){
+    function filterItems(str = route.params.fileterString){
         if(str) setItems(newItemsList.filter(item => item.name.toLowerCase().includes(str.toLowerCase())));
         else setItems(newItemsList);
     }
@@ -30,9 +23,7 @@ const StoreItems = ({ store=null, onScreenChange=null, fileterString=null }) => 
             <View style={styles.headerContainer}>
                 <TouchableOpacity
                     style={[styles.logoContainer, {width:100}]}
-                    onPress={useCallback(event => {
-                        onScreenChange(<Stores onScreenChange={onScreenChange} />)
-                    }, [onScreenChange])}
+                    onPress={() => navigation.goBack()}
                 >
                     <Image
                             source={require('../../assets/images/back_icon.png')}
@@ -41,24 +32,19 @@ const StoreItems = ({ store=null, onScreenChange=null, fileterString=null }) => 
                 </TouchableOpacity>
                 <View style={styles.logoContainer}>
                     <Image
-                            source={store.logo}
+                            source={route.params.currentStore.logo}
                             style={styles.logo}
                     />
                 </View>
-                <Text style={styles.header}>{store.name}</Text>
+                <Text style={styles.header}>{route.params.currentStore.name}</Text>
             </View>
             <TouchableOpacity
-                onPress={useCallback(event => {
-                    onScreenChange(<AddItem store={store} onScreenChange={onScreenChange} />)
-                }, [onScreenChange])}
+                onPress={() => navigation.push('AddItemScreen', {store: route.params.currentStore })}
             >
                 <View style={styles.smallContainer}>
                     <Text style={{color: 'black', fontSize: 20, height: 30, marginTop: -5}}>Add New Item</Text>
                 </View>
             </TouchableOpacity>
-
-
-
 
             <ScrollView
                 horizontal={false}
@@ -81,7 +67,7 @@ const StoreItems = ({ store=null, onScreenChange=null, fileterString=null }) => 
 
                 {items.sort((a, b) => a.name > b.name ? 1 : -1).map((item, index) => (
                     <View key={item.name} >
-                        <ItemCard storeName={store.name} item={item} onScreenChange={onScreenChange} />
+                        <ItemCard navigation={navigation} storeName={route.params.currentStore.name} item={item} />
                     </View>
                 ))}
             </ScrollView>
@@ -141,10 +127,7 @@ const styles = StyleSheet.create({
     },
     input: {
         width: '95%',
-        //marginLeft: 5,
         height: 25,
-        //borderColor: 'black',
-        //borderWidth: 1,
         marginTop: -4,
     },
 })

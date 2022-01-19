@@ -1,10 +1,10 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import { View, Text, ScrollView, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native'
 import { STORES } from '../../data/stores'
-import StoreCard from '../shared/StoreCard'
-import AddStore from './AddStore'
+import StoreCard from './StoreCard'
+import Header from '../shared/Header'
 
-const Stores = ({ onScreenChange }) => {
+const Stores = ({ navigation, route }) => {
 
     const [stores, setStores] = useState(STORES);
 
@@ -15,10 +15,9 @@ const Stores = ({ onScreenChange }) => {
 
     return (
         <View style={styles.container}>
+            <Header navigation={navigation} screenToShow={'StoresScreen'} />
             <TouchableOpacity
-                onPress={useCallback(event => {
-                    onScreenChange(<AddStore onScreenChange = {onScreenChange} />)
-                  }, [onScreenChange])}
+                onPress={() => navigation.push('AddStoreScreen')}
             >
                 <View style={styles.smallContainer}>
                     <Text style={{color: 'black', fontSize: 20, height: 30, marginTop: -5}}>Add New Store</Text>
@@ -45,7 +44,7 @@ const Stores = ({ onScreenChange }) => {
 
                 {stores.sort((a, b) => a.name > b.name ? 1 : -1).map((store, index) => (
                     <View key={store.name} >
-                        <StoreCard store={store} onScreenChange = {onScreenChange} />
+                        <StoreCard store={store} navigation={navigation} route={route} />
                     </View>
                 ))}
             </ScrollView>

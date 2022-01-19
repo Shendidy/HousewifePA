@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet, Image, Linking } from 'react-native'
 import AllAvailablePrices from './AllAvailablePrices';
 
-const ItemDetailsView = ({item, storeName, price, itemUrl, onScreenChange, setModalVisible}) => {
+const ItemDetailsView = ({navigation, item, storeName, price, itemUrl, setModalVisible}) => {
     let linkTag;
     if(itemUrl != null) {
         linkTag = 
@@ -23,7 +23,7 @@ const ItemDetailsView = ({item, storeName, price, itemUrl, onScreenChange, setMo
             <>
                 <Text style={[styles.modalDetailsLabel, {width: '100%', paddingTop: 5}]}>All Available Prices: </Text>
                     <Text style={styles.modalDetailsContainer}>
-                    <Text style={styles.modalDetailsText}><AllAvailablePrices prices={item.prices} storeName={storeName} onScreenChange={onScreenChange} setModalVisible={setModalVisible} /></Text>
+                    <Text style={styles.modalDetailsText}><AllAvailablePrices prices={item.prices} storeName={storeName} setModalVisible={setModalVisible} navigation={navigation} /></Text>
                 </Text>
             </>
     }
