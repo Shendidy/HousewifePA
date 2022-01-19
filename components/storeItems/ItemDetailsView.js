@@ -23,7 +23,7 @@ const ItemDetailsView = ({navigation, item, storeName, price, itemUrl, setModalV
             <>
                 <Text style={[styles.modalDetailsLabel, {width: '100%', paddingTop: 5}]}>All Available Prices: </Text>
                     <Text style={styles.modalDetailsContainer}>
-                    <Text style={styles.modalDetailsText}><AllAvailablePrices prices={item.prices} storeName={storeName} setModalVisible={setModalVisible} navigation={navigation} /></Text>
+                    <Text style={styles.modalDetailsText}><AllAvailablePrices prices={item.prices} storeName={storeName} setModalVisible={setModalVisible} navigation={navigation} itemName={item.name} /></Text>
                 </Text>
             </>
     }

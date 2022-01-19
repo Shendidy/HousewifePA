@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, TextInput } from 'react-native'
 import Header from '../shared/Header';
 import { ITEMS } from '../../data/items'
@@ -14,10 +14,11 @@ const StoreItems = ({ navigation, route }) => {
 
     const [items, setItems] = useState(newItemsList);
 
-    function filterItems(str = route.params.fileterString){
+    function filterItems(str = route.params.filterString){
         if(str) setItems(newItemsList.filter(item => item.name.toLowerCase().includes(str.toLowerCase())));
         else setItems(newItemsList);
     }
+    useEffect(() => {filterItems();},[]);
 
     return (
         <View style={styles.container}>
