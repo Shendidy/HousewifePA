@@ -21,7 +21,6 @@ const StoreItems = ({ navigation, route }) => {
     const [items, setItems] = useState(newItemsList);
 
     function filterItems(str = route.params.filterString){
-        placeholderText = "Search in " + route.params.currentStore.name;
         if(str) setItems(newItemsList.filter(item => item.name.toLowerCase().includes(str.toLowerCase())));
         else setItems(newItemsList);
     }
