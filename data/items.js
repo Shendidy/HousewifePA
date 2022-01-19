@@ -78,7 +78,7 @@ export const ITEMS = [
                 data: [
                     {
                         date: 1636987386000,
-                        price: 3.00,
+                        price: 2.90,
                         link: "https://www.tesco.com/groceries/en-GB/products/307734756",
                     }
 
