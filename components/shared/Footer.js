@@ -94,14 +94,14 @@ const styles = StyleSheet.create({
       borderColor: 'red',
       borderWidth: 1,
       position: 'absolute',
-      left: 15,
-      bottom: 25,
+      left: 35,
+      bottom: 30,
       width: 65,
       height: 20,
       borderRadius: 25,
       alignItems: 'center',
       justifyContent: 'center',
-      zIndex: 100,
+      zIndex: 999,
   },
   totalBadgeText: {
       color: 'white',
@@ -114,28 +114,13 @@ const styles = StyleSheet.create({
       //marginLeft: 10,
       resizeMode: 'contain'
   },
-  iconsContainer: {
-      flexDirection: 'row',
-      marginTop: 20,
-  },
-  iconsContainer2: {
-    backgroundColor: 'blue',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 20,
-  },
   container: {
       justifyContent: 'space-around',
       alignItems: 'center',
       flexDirection: 'row',
-      //marginHorizontal: 10,
       backgroundColor: 'black',
       height: 40,
       width: '100%',
-  },
-  logoButton: {
-      width: '50%',
-      height: 50
   },
 })
 

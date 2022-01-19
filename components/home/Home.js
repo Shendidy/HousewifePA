@@ -15,54 +15,54 @@ export default Home = ({ navigation, route }) => (
                 showsVerticalScrollIndicator={false}
                 style={{marginVertical: 5}}
                 >
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
                     <Text></Text>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
                     <Text></Text>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
                     <Text></Text>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
                     <Text></Text>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
                     <Text></Text>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
                     <Text></Text>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
                     <Text></Text>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
                     <Text></Text>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
-                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
+                    <View><Text style={{color: 'white'}}>Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!Welcome to your Housewife Personal Assistant!</Text></View>
                     <Text></Text>
                 </ScrollView>
             </View>

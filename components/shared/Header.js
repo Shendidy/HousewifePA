@@ -66,32 +66,11 @@ const Header = ({navigation, screenToShow='HomeScreen'}) => {
 
             <View style={styles.iconsContainer}>
                 <TouchableOpacity
-                    onPress={() => navigation.push('CartsScreen')}
-                >
-                    <View style={styles.totalBadge}>
-                        <Text style={styles.totalBadgeText}>£0.00</Text>
-                    </View>
-                    <Image
-                        style={[styles.icon, {backgroundColor:bgColors.backgrounds.cartsBackground}]}
-                        source={require('../../assets/images/cart_plus_icon.png')}
-                    />
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                    onPress={() => navigation.push('StoresScreen')}
-                >
-                    <Image
-                        style={[styles.icon, {backgroundColor:bgColors.backgrounds.storesBackground}]}
-                        source={require('../../assets/images/store_icon.png')}
-                    />
-                </TouchableOpacity>
-
-                <TouchableOpacity
                     onPress={() => navigation.push('RecepiesScreen')}
                 >
                     <Image
                         style={[styles.icon, {backgroundColor:bgColors.backgrounds.recepiesBackground}]}
-                        source={require('../../assets/images/recipe_icon.png')}
+                        source={require('../../assets/images/settings_icon.png')}
                     />
                 </TouchableOpacity>
             </View>
@@ -120,14 +99,13 @@ const styles = StyleSheet.create({
         marginTop: -3,
     },
     icon: {
-        width: 24,
-        height: 24,
-        marginLeft: 10,
+        width: 48,
+        height: 48,
         resizeMode: 'contain'
     },
     iconsContainer: {
         flexDirection: 'row',
-        marginTop: 20,
+        marginTop: 0,
     },
     container: {
         justifyContent: 'space-between',
