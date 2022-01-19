@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, TextInput } from 'react-native'
 import Header from '../shared/Header';
+import Footer from '../shared/Footer'
 import { ITEMS } from '../../data/items'
 import ItemCard from './ItemCard';
 
@@ -59,6 +60,7 @@ const StoreItems = ({ navigation, route }) => {
                 horizontal={false}
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
+                style={{marginVertical: 5}}
             >
                 <View style={styles.smallContainer}>
                     <View style={styles.searchContainer}>
@@ -81,6 +83,7 @@ const StoreItems = ({ navigation, route }) => {
                     </View>
                 ))}
             </ScrollView>
+            <Footer navigation={navigation} screenToShow={'StoreItemsScreen'} />
         </View>
     )
 }
