@@ -5,6 +5,12 @@ import { ITEMS } from '../../data/items'
 import ItemCard from './ItemCard';
 
 const StoreItems = ({ navigation, route }) => {
+    let placeholderText
+
+    if(route.params.filterString) placeholderText = route.params.filterString;
+    else placeholderText = "Search in " + route.params.currentStore.name;
+
+
     let newItemsList;
     newItemsList = [];
 
@@ -15,6 +21,7 @@ const StoreItems = ({ navigation, route }) => {
     const [items, setItems] = useState(newItemsList);
 
     function filterItems(str = route.params.filterString){
+        placeholderText = "Search in " + route.params.currentStore.name;
         if(str) setItems(newItemsList.filter(item => item.name.toLowerCase().includes(str.toLowerCase())));
         else setItems(newItemsList);
     }
@@ -63,7 +70,8 @@ const StoreItems = ({ navigation, route }) => {
                         <TextInput
                             style={styles.input}
                             onChangeText={(val) => filterItems(val)}
-                            placeholder="Search your stores..."
+                            placeholder={placeholderText}
+                            onFocus={() => filterItems('')}
                         />
                     </View>
                 </View>
