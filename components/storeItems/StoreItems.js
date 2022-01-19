@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, TextInput } from 'react-native'
+import Header from '../shared/Header';
 import { ITEMS } from '../../data/items'
 import ItemCard from './ItemCard';
 
@@ -20,6 +21,7 @@ const StoreItems = ({ navigation, route }) => {
 
     return (
         <View style={styles.container}>
+            <Header navigation={navigation} screenToShow={'StoreItemsScreen'} />
             <View style={styles.headerContainer}>
                 <TouchableOpacity
                     style={[styles.logoContainer, {width:100}]}

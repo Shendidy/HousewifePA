@@ -1,8 +1,10 @@
 import React from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import Header from '../shared/Header'
 
-export default AddStore = ({ navigation, params }) => (
+export default AddStore = ({ navigation, route }) => (
         <View style={styles.container}>
+            <Header navigation={navigation} screenToShow={'AddStoreScreen'} />
             <Text style={styles.header}>Add New Store...</Text>
 
             <View style={styles.inputFields}>

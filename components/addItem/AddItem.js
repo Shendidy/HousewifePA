@@ -1,15 +1,17 @@
 import React from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import Header from '../shared/Header';
 
 export default AddItem = ({ navigation, route }) => {
 
     let storeName;
-    if(route != null) storeName='TBC'
-    else storeName=route.params.store.name;
+    if(route === null) storeName=''
+    else storeName='to ' + route.params.store.name;
     
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Add New Item to {storeName}</Text>
+            <Header navigation={navigation} screenToShow={'AddStoreScreen'} />
+            <Text style={styles.header}>Add New Item {storeName}</Text>
 
             <View style={styles.inputFields}>
                 <Text style={styles.inputFieldsTextRequired}>*Item name:</Text>
