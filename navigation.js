@@ -8,6 +8,7 @@ import HomeScreen from './screens/HomeScreen';
 import RecepiesScreen from './screens/RecepiesScreen';
 import StoreItemsScreen from './screens/StoreItemsScreen';
 import StoresScreen from './screens/StoresScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
 const stack = createStackNavigator();
 const screenOptions = {
@@ -27,6 +28,7 @@ const SignedInStack = () => (
         <stack.Screen name='RecepiesScreen' component={RecepiesScreen} options={{ cardStyle:{backgroundColor: 'black'} }} />
         <stack.Screen name='StoreItemsScreen' component={StoreItemsScreen} options={{ cardStyle:{backgroundColor: 'black'} }} />
         <stack.Screen name='StoresScreen' component={StoresScreen} options={{ cardStyle:{backgroundColor: 'black'} }} />
+        <stack.Screen name='SettingsScreen' component={SettingsScreen} options={{ cardStyle:{backgroundColor: 'black'} }} />
       </stack.Navigator>
     </NavigationContainer>
   )

@@ -8,9 +8,7 @@ const Header = ({navigation, screenToShow='HomeScreen'}) => {
     const [bgColors, setBgColors] = useState({
         backgrounds:{
             homeBackground: activeIconBackground,
-            cartsBackground: inactiveIconBackground,
-            storesBackground: inactiveIconBackground,
-            recepiesBackground: inactiveIconBackground
+            settingsBackground: inactiveIconBackground
         }
     });
 
@@ -19,9 +17,7 @@ const Header = ({navigation, screenToShow='HomeScreen'}) => {
             backgrounds:
             {
                 homeBackground: inactiveIconBackground,
-                cartsBackground: inactiveIconBackground,
-                storesBackground: inactiveIconBackground,
-                recepiesBackground: inactiveIconBackground
+                settingsBackground: inactiveIconBackground
             }
         });
     }
@@ -33,14 +29,8 @@ const Header = ({navigation, screenToShow='HomeScreen'}) => {
             case 'HomeScreen':
                 setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, homeBackground: activeIconBackground}}));
                 break;
-            case 'CartsScreen':
-                setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, cartsBackground: activeIconBackground}}));
-                break;
-            case 'StoresScreen':
-                setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, storesBackground: activeIconBackground}}));
-                break;
-            case 'RecepiesScreen':
-                setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, recepiesBackground: activeIconBackground}}));
+            case 'SettingsScreen':
+                setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, settingsBackground: activeIconBackground}}));
                 break;
             default:
                 resetBackgrounds();
@@ -66,10 +56,10 @@ const Header = ({navigation, screenToShow='HomeScreen'}) => {
 
             <View style={styles.iconsContainer}>
                 <TouchableOpacity
-                    onPress={() => navigation.push('RecepiesScreen')}
+                    onPress={() => navigation.push('SettingsScreen')}
                 >
                     <Image
-                        style={[styles.icon, {backgroundColor:bgColors.backgrounds.recepiesBackground}]}
+                        style={[styles.icon, {backgroundColor:bgColors.backgrounds.settingsBackground}]}
                         source={require('../../assets/images/settings_icon.png')}
                     />
                 </TouchableOpacity>

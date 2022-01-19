@@ -7,7 +7,6 @@ const Footer = ({navigation, screenToShow='HomeScreen'}) => {
   const inactiveIconBackground = 'black';
   const [bgColors, setBgColors] = useState({
     backgrounds:{
-      homeBackground: activeIconBackground,
       cartsBackground: inactiveIconBackground,
       storesBackground: inactiveIconBackground,
       recepiesBackground: inactiveIconBackground
@@ -17,7 +16,6 @@ const Footer = ({navigation, screenToShow='HomeScreen'}) => {
   function resetBackgrounds(){
     setBgColors({
       backgrounds: {
-        homeBackground: inactiveIconBackground,
         cartsBackground: inactiveIconBackground,
         storesBackground: inactiveIconBackground,
         recepiesBackground: inactiveIconBackground
@@ -29,9 +27,6 @@ const Footer = ({navigation, screenToShow='HomeScreen'}) => {
       resetBackgrounds();
 
       switch(screen){
-          case 'HomeScreen':
-              setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, homeBackground: activeIconBackground}}));
-              break;
           case 'CartsScreen':
               setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, cartsBackground: activeIconBackground}}));
               break;
