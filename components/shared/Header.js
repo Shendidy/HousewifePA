@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 
 const Header = ({navigation, screenToShow='HomeScreen'}) => {
     const [screenShown, setScreenShown] = useState(screenToShow);
-    const activeIconBackground = 'blue';
+    const activeIconBackground = 'darkgrey';
     const inactiveIconBackground = 'black';
     const [bgColors, setBgColors] = useState({
         backgrounds:{

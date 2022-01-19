@@ -98,6 +98,9 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginTop: -4,
     },
+    inputFields:{
+        marginLeft: 5
+    },
     inputFieldsText: {
         color: 'white',
         fontSize: 20
