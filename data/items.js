@@ -79,6 +79,7 @@ export const ITEMS = [
                     {
                         date: 1636987386000,
                         price: 3.00,
+                        link: "https://www.tesco.com/groceries/en-GB/products/307734756",
                     }
 
                 ]
@@ -89,6 +90,7 @@ export const ITEMS = [
                     {
                         date: 1636987386985,
                         price: 2.00,
+                        link: "https://groceries.asda.com/product/mayonnaise/heinz-seriously-good-vegan-mayo/1000279996070",
                     }
 
                 ]
