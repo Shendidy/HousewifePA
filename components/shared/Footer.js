@@ -54,18 +54,7 @@ const Footer = ({navigation, screenToShow='HomeScreen'}) => {
   
   return (
     
-    <View style={[styles.container, {paddingBottom: 5}]}>
-    <TouchableOpacity
-        style={styles.logoButton}
-        onPress={() => navigation.push('HomeScreen')}
-    >
-        <Image 
-            style={[styles.logo, {borderWidth: 2, borderColor:bgColors.backgrounds.homeBackground}]} 
-            source={require('../../assets/images/name_logo_white_004i.png')} 
-        />
-    </TouchableOpacity>
-
-    <View style={styles.iconsContainer}>
+    <View style={styles.container}>
         <TouchableOpacity
             onPress={() => navigation.push('CartsScreen')}
         >
@@ -96,7 +85,6 @@ const Footer = ({navigation, screenToShow='HomeScreen'}) => {
             />
         </TouchableOpacity>
     </View>
-</View>
   )
 }
 
@@ -121,25 +109,29 @@ const styles = StyleSheet.create({
       marginTop: -3,
   },
   icon: {
-      width: 24,
-      height: 24,
-      marginLeft: 10,
+      width: 36,
+      height: 36,
+      //marginLeft: 10,
       resizeMode: 'contain'
   },
   iconsContainer: {
       flexDirection: 'row',
       marginTop: 20,
   },
+  iconsContainer2: {
+    backgroundColor: 'blue',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+  },
   container: {
-      justifyContent: 'space-between',
+      justifyContent: 'space-around',
       alignItems: 'center',
       flexDirection: 'row',
-      marginHorizontal: 10,
-  },
-  logo: {
+      //marginHorizontal: 10,
+      backgroundColor: 'black',
+      height: 40,
       width: '100%',
-      height: '100%',
-      resizeMode: 'contain',
   },
   logoButton: {
       width: '50%',
