@@ -1,51 +1,29 @@
-import React, { useState, useEffect } from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 
 const Footer = ({navigation, screenToShow='HomeScreen'}) => {
-  const [screenShown, setScreenShown] = useState(screenToShow);
-  const activeIconBackground = 'darkgrey';
-  const inactiveIconBackground = 'black';
-  const [bgColors, setBgColors] = useState({
-    backgrounds:{
-      cartsBackground: inactiveIconBackground,
-      storesBackground: inactiveIconBackground,
-      recepiesBackground: inactiveIconBackground
+    let cartIcon, storeIcon, recipeIcon;
+
+    switch(screenToShow){
+        case 'CartsScreen':
+            cartIcon = require('../../assets/images/cart_plus_icon_red.png');
+            storeIcon = require('../../assets/images/store_icon.png');
+            recipeIcon = require('../../assets/images/recipe_icon.png');
+            break;
+        case 'StoresScreen':
+            cartIcon = require('../../assets/images/cart_plus_icon.png');
+            storeIcon = require('../../assets/images/store_icon_red.png');
+            recipeIcon = require('../../assets/images/recipe_icon.png');
+            break;
+        case 'RecipesScreen':
+            cartIcon = require('../../assets/images/cart_plus_icon.png');
+            storeIcon = require('../../assets/images/store_icon.png');
+            recipeIcon = require('../../assets/images/recipe_icon_red.png');
+            break;
+        default:
+            cartIcon = require('../../assets/images/cart_plus_icon.png');
+            storeIcon = require('../../assets/images/store_icon.png');
+            recipeIcon = require('../../assets/images/recipe_icon.png');
     }
-  });
-
-  function resetBackgrounds(){
-    setBgColors({
-      backgrounds: {
-        cartsBackground: inactiveIconBackground,
-        storesBackground: inactiveIconBackground,
-        recepiesBackground: inactiveIconBackground
-      }
-    });
-  }
-  
-  function setScreen(screen){
-      resetBackgrounds();
-
-      switch(screen){
-          case 'CartsScreen':
-              setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, cartsBackground: activeIconBackground}}));
-              break;
-          case 'StoresScreen':
-              setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, storesBackground: activeIconBackground}}));
-              break;
-          case 'RecepiesScreen':
-              setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, recepiesBackground: activeIconBackground}}));
-              break;
-          default:
-              resetBackgrounds();
-      }
-  }
-
-  useEffect(() => {
-      setScreenShown(screenToShow);
-      setScreen(screenShown);
-  },[]);
-
   
   return (
     
@@ -57,8 +35,8 @@ const Footer = ({navigation, screenToShow='HomeScreen'}) => {
                 <Text style={styles.totalBadgeText}>£0.00</Text>
             </View>
             <Image
-                style={[styles.icon, {backgroundColor:bgColors.backgrounds.cartsBackground}]}
-                source={require('../../assets/images/cart_plus_icon.png')}
+                style={[styles.icon]}
+                source={cartIcon}
             />
         </TouchableOpacity>
 
@@ -66,17 +44,17 @@ const Footer = ({navigation, screenToShow='HomeScreen'}) => {
             onPress={() => navigation.push('StoresScreen')}
         >
             <Image
-                style={[styles.icon, {backgroundColor:bgColors.backgrounds.storesBackground}]}
-                source={require('../../assets/images/store_icon.png')}
+                style={[styles.icon]}
+                source={storeIcon}
             />
         </TouchableOpacity>
 
         <TouchableOpacity
-            onPress={() => navigation.push('RecepiesScreen')}
+            onPress={() => navigation.push('RecipesScreen')}
         >
             <Image
-                style={[styles.icon, {backgroundColor:bgColors.backgrounds.recepiesBackground}]}
-                source={require('../../assets/images/recipe_icon.png')}
+                style={[styles.icon]}
+                source={recipeIcon}
             />
         </TouchableOpacity>
     </View>

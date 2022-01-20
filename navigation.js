@@ -5,7 +5,7 @@ import AddItemScreen from './screens/AddItemScreen';
 import AddStoreScreen from './screens/AddStoreScreen';
 import CartsScreen from './screens/CartsScreen';
 import HomeScreen from './screens/HomeScreen';
-import RecepiesScreen from './screens/RecepiesScreen';
+import RecipesScreen from './screens/RecipesScreen';
 import StoreItemsScreen from './screens/StoreItemsScreen';
 import StoresScreen from './screens/StoresScreen';
 import SettingsScreen from './screens/SettingsScreen';
@@ -25,7 +25,7 @@ const SignedInStack = () => (
         <stack.Screen name='AddStoreScreen' component={AddStoreScreen} options={{ cardStyle:{backgroundColor: 'black'} }} />
         <stack.Screen name='CartsScreen' component={CartsScreen} options={{ cardStyle:{backgroundColor: 'black'} }} />
         <stack.Screen name='HomeScreen' component={HomeScreen} options={{ cardStyle:{backgroundColor: 'black'} }} />
-        <stack.Screen name='RecepiesScreen' component={RecepiesScreen} options={{ cardStyle:{backgroundColor: 'black'} }} />
+        <stack.Screen name='RecipesScreen' component={RecipesScreen} options={{ cardStyle:{backgroundColor: 'black'} }} />
         <stack.Screen name='StoreItemsScreen' component={StoreItemsScreen} options={{ cardStyle:{backgroundColor: 'black'} }} />
         <stack.Screen name='StoresScreen' component={StoresScreen} options={{ cardStyle:{backgroundColor: 'black'} }} />
         <stack.Screen name='SettingsScreen' component={SettingsScreen} options={{ cardStyle:{backgroundColor: 'black'} }} />

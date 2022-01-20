@@ -1,46 +1,22 @@
-import React, { useState, useEffect } from 'react'
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import React from 'react'
+import { View, Image, StyleSheet, TouchableOpacity } from 'react-native'
 
 const Header = ({navigation, screenToShow='HomeScreen'}) => {
-    const [screenShown, setScreenShown] = useState(screenToShow);
-    const activeIconBackground = 'darkgrey';
-    const inactiveIconBackground = 'black';
-    const [bgColors, setBgColors] = useState({
-        backgrounds:{
-            homeBackground: activeIconBackground,
-            settingsBackground: inactiveIconBackground
-        }
-    });
+    let nameLogo, settingsIcon;
 
-    function resetBackgrounds(){
-        setBgColors({
-            backgrounds:
-            {
-                homeBackground: inactiveIconBackground,
-                settingsBackground: inactiveIconBackground
-            }
-        });
+    switch(screenToShow){
+        case 'HomeScreen':
+            nameLogo = require('../../assets/images/name_logo_red.png');
+            settingsIcon = require('../../assets/images/settings_icon.png');
+            break;
+        case 'SettingsScreen':
+            nameLogo = require('../../assets/images/name_logo.png');
+            settingsIcon = require('../../assets/images/settings_icon_red.png');
+            break;
+        default:
+            nameLogo = require('../../assets/images/name_logo.png');
+            settingsIcon = require('../../assets/images/settings_icon.png');
     }
-    
-    function setScreen(screen){
-        resetBackgrounds();
-
-        switch(screen){
-            case 'HomeScreen':
-                setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, homeBackground: activeIconBackground}}));
-                break;
-            case 'SettingsScreen':
-                setBgColors((prevState) => ({...prevState, backgrounds: { ...prevState.backgrounds, settingsBackground: activeIconBackground}}));
-                break;
-            default:
-                resetBackgrounds();
-        }
-    }
-
-    useEffect(() => {
-        setScreenShown(screenToShow);
-        setScreen(screenShown);
-    },[]);
 
     return (
         <View style={[styles.container, {paddingTop: 5}]}>
@@ -49,8 +25,8 @@ const Header = ({navigation, screenToShow='HomeScreen'}) => {
                 onPress={() => navigation.push('HomeScreen')}
             >
                 <Image 
-                    style={[styles.logo, {borderWidth: 2, borderColor:bgColors.backgrounds.homeBackground}]} 
-                    source={require('../../assets/images/name_logo_white_004i.png')} 
+                    style={[styles.logo]} 
+                    source={nameLogo} 
                 />
             </TouchableOpacity>
 
@@ -59,8 +35,8 @@ const Header = ({navigation, screenToShow='HomeScreen'}) => {
                     onPress={() => navigation.push('SettingsScreen')}
                 >
                     <Image
-                        style={[styles.icon, {backgroundColor:bgColors.backgrounds.settingsBackground}]}
-                        source={require('../../assets/images/settings_icon.png')}
+                        style={[styles.icon]}
+                        source={settingsIcon}
                     />
                 </TouchableOpacity>
             </View>
