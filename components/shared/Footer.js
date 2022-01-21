@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
       marginTop: -3,
   },
   iconContainer: {
-    backgroundColor: 'blue',
+    backgroundColor: '#rgba(0,0,255,0.7)',
     width: 72,
     height: 72,
     justifyContent: 'center',
