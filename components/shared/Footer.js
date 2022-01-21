@@ -27,9 +27,15 @@ const Footer = ({navigation, screenToShow='HomeScreen'}) => {
   
   return (
     
-    <View style={styles.container}>
+    <View style={styles.container} >
+        <View style={styles.iconContainer} >
         <TouchableOpacity
             onPress={() => navigation.push('CartsScreen')}
+            style={{
+                flex: 1,
+                alignContent: 'center',
+                justifyContent: 'center'
+            }}
         >
             <View style={styles.totalBadge}>
                 <Text style={styles.totalBadgeText}>£0.00</Text>
@@ -39,7 +45,9 @@ const Footer = ({navigation, screenToShow='HomeScreen'}) => {
                 source={cartIcon}
             />
         </TouchableOpacity>
+        </View>
 
+        <View style={styles.iconContainer} >
         <TouchableOpacity
             onPress={() => navigation.push('StoresScreen')}
         >
@@ -48,7 +56,9 @@ const Footer = ({navigation, screenToShow='HomeScreen'}) => {
                 source={storeIcon}
             />
         </TouchableOpacity>
+        </View>
 
+        <View style={styles.iconContainer} >
         <TouchableOpacity
             onPress={() => navigation.push('RecipesScreen')}
         >
@@ -57,6 +67,7 @@ const Footer = ({navigation, screenToShow='HomeScreen'}) => {
                 source={recipeIcon}
             />
         </TouchableOpacity>
+        </View>
     </View>
   )
 }
@@ -67,8 +78,8 @@ const styles = StyleSheet.create({
       borderColor: 'red',
       borderWidth: 1,
       position: 'absolute',
-      left: 35,
-      bottom: 30,
+      left: 30,
+      bottom: 5,
       width: 65,
       height: 20,
       borderRadius: 25,
@@ -81,6 +92,16 @@ const styles = StyleSheet.create({
       fontWeight: '600',
       marginTop: -3,
   },
+  iconContainer: {
+    backgroundColor: 'blue',
+    width: 72,
+    height: 72,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 36,
+    //flex:1,
+    marginBottom: 50,
+  },
   icon: {
       width: 36,
       height: 36,
@@ -91,8 +112,8 @@ const styles = StyleSheet.create({
       justifyContent: 'space-around',
       alignItems: 'center',
       flexDirection: 'row',
-      backgroundColor: 'black',
-      height: 40,
+      backgroundColor: '#rgba(255,255,255,0)',
+      height: 30,
       width: '100%',
   },
 })
