@@ -22,7 +22,7 @@ const Header = ({navigation, screenToShow='HomeScreen'}) => {
         <View style={[styles.container, {paddingTop: 5}]}>
             <TouchableOpacity
                 style={styles.logoButton}
-                onPress={() => navigation.push('HomeScreen')}
+                onPress={() => {if(screenToShow !== 'HomeScreen') navigation.push('HomeScreen')}}
             >
                 <Image 
                     style={[styles.logo]} 
@@ -32,7 +32,7 @@ const Header = ({navigation, screenToShow='HomeScreen'}) => {
 
             <View style={styles.iconsContainer}>
                 <TouchableOpacity
-                    onPress={() => navigation.push('SettingsScreen')}
+                    onPress={() => {if(screenToShow !== 'SettingsScreen') navigation.push('SettingsScreen')}}
                 >
                     <Image
                         style={[styles.icon]}

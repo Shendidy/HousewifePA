@@ -28,46 +28,36 @@ const Footer = ({navigation, screenToShow='HomeScreen'}) => {
   return (
     
     <View style={styles.container} >
-        <View style={styles.iconContainer} >
-        <TouchableOpacity
-            onPress={() => navigation.push('CartsScreen')}
-            style={{
-                flex: 1,
-                alignContent: 'center',
-                justifyContent: 'center'
-            }}
-        >
-            <View style={styles.totalBadge}>
-                <Text style={styles.totalBadgeText}>£0.00</Text>
+        <TouchableOpacity onPress={() => {if(screenToShow !== 'CartsScreen') navigation.push('CartsScreen')}} style={styles.iconContainer} >
+            <View>
+                <View style={styles.totalBadge}>
+                    <Text style={styles.totalBadgeText}>£0.00</Text>
+                </View>
+                
+                <Image
+                    style={[styles.icon]}
+                    source={cartIcon}
+                />
             </View>
-            <Image
-                style={[styles.icon]}
-                source={cartIcon}
-            />
         </TouchableOpacity>
-        </View>
 
-        <View style={styles.iconContainer} >
-        <TouchableOpacity
-            onPress={() => navigation.push('StoresScreen')}
-        >
-            <Image
-                style={[styles.icon]}
-                source={storeIcon}
-            />
+        <TouchableOpacity onPress={() => {if(screenToShow !== 'StoresScreen') navigation.push('StoresScreen')}} style={styles.iconContainer} >
+            <View>
+                <Image
+                    style={[styles.icon]}
+                    source={storeIcon}
+                />
+            </View>
         </TouchableOpacity>
-        </View>
 
-        <View style={styles.iconContainer} >
-        <TouchableOpacity
-            onPress={() => navigation.push('RecipesScreen')}
-        >
-            <Image
-                style={[styles.icon]}
-                source={recipeIcon}
-            />
+        <TouchableOpacity onPress={() => {if(screenToShow !== 'RecipesScreen') navigation.push('RecipesScreen')}} style={styles.iconContainer} >
+            <View>
+                <Image
+                    style={[styles.icon]}
+                    source={recipeIcon}
+                />
+            </View>
         </TouchableOpacity>
-        </View>
     </View>
   )
 }
@@ -79,7 +69,7 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       position: 'absolute',
       left: 30,
-      bottom: 5,
+      bottom: -15,
       width: 65,
       height: 20,
       borderRadius: 25,
