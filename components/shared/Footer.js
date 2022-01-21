@@ -89,13 +89,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 36,
-    //flex:1,
     marginBottom: 50,
   },
   icon: {
       width: 36,
       height: 36,
-      //marginLeft: 10,
       resizeMode: 'contain'
   },
   container: {
